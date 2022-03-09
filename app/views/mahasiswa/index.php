@@ -1,8 +1,13 @@
 <div class="container mt-3">
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-lg-6">
+            <?php Flasher::flash();?>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-lg-6">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
                 Tambah Data
             </button>
@@ -59,7 +64,7 @@
                             <option value="Teknik Pangan">Teknik Pangan</option>
                             <option value="Teknik Planologi">Teknik Planologi</option>
                         </select>
-                    </div>                    
+                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
