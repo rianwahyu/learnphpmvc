@@ -1,5 +1,7 @@
 <?php
 
+use JetBrains\PhpStorm\Internal\ReturnTypeContract;
+
 class Mahasiswa_model
 {
 
@@ -100,5 +102,16 @@ class Mahasiswa_model
         $this->db->execute();
 
         return $this->db->rowCount();
+    }
+
+
+    public function cariDataMahasiswa()
+    {
+        $keyword = $_POST['keyword'];
+
+        $query = "SELECT * FROM mahasiswa WHERE nama LIKE :keyword ";
+        $this->db->query($query);
+        $this->db->bind('keyword', "%$keyword%");
+        return $this->db->resultSet();
     }
 }
